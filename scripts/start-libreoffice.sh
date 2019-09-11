@@ -26,6 +26,8 @@ fi
 
 # Replace trusted host and set admin username and password
 perl -pi -e "s/localhost<\/host>/${domain}<\/host>/g" /etc/loolwsd/loolwsd.xml
+# set ssl false
+# perl -pi -e "s/SSL support to enable.\" default=\"true\">true/SSL support to enable.\" default=\"true\">false/g" /etc/loolwsd/loolwsd.xml
 perl -pi -e "s/<username (.*)>.*<\/username>/<username \1>${username}<\/username>/" /etc/loolwsd/loolwsd.xml
 perl -pi -e "s/<password (.*)>.*<\/password>/<password \1>${password}<\/password>/" /etc/loolwsd/loolwsd.xml
 perl -pi -e "s/<server_name (.*)>.*<\/server_name>/<server_name \1>${server_name}<\/server_name>/" /etc/loolwsd/loolwsd.xml
